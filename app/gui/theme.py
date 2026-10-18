@@ -10,6 +10,11 @@ default-light Qt palette leaks through and text always stays readable.
 
 from __future__ import annotations
 
+import os
+
+# Ikon centang putih untuk QCheckBox yang dicentang (QSS butuh path absolut).
+_CHECK_ICON = os.path.join(os.path.dirname(os.path.abspath(__file__)), "check.svg").replace("\\", "/")
+
 C = {
     # surfaces
     "bg": "#0b1120",
@@ -290,7 +295,8 @@ QCheckBox::indicator {{
 }}
 QCheckBox::indicator:checked {{
     background-color: {C['accent_dark']};
-    border-color: {C['accent_dark']};
+    border-color: {C['accent']};
+    image: url({_CHECK_ICON});
 }}
 QCheckBox::indicator:hover {{
     border-color: {C['accent']};
