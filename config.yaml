@@ -1,0 +1,56 @@
+app:
+  name: opc_mitsu
+  log_level: DEBUG
+  log_dir: logs
+plc:
+  driver: mitsubishi
+  ip: 192.168.3.250
+  port: 5001
+  protocol: binary
+  plctype: Q
+  network: 0
+  pc: 255
+  dest_moduleio: 1023
+  dest_modulesta: 0
+  timeout_sec: 2.0
+  poll_interval: 0.6
+  auto_reconnect: true
+  unit_id: 1
+  serial_port: COM1
+  baudrate: 9600
+  parity: N
+  stopbits: 1
+  fins_network: 0
+  fins_node: 0
+  fins_unit: 0
+database:
+  enabled: true
+  host: 127.0.0.1
+  port: 3306
+  user: root
+  password: ''
+  database: opc_mitsu
+  status_table: t_reg_status
+  transmit_table: t_transmit
+  dev_name: MITSUBISHI
+  group_name: PLC1
+  write_from_db: true
+  create_schema: false
+  queue_size: 20000
+tags:
+- name: D100
+  address: D100
+  type: int16
+  writable: true
+  scale: 1.0
+  offset: 0.0
+  swap_words: false
+  description: ''
+- name: D101
+  address: D101
+  type: int16
+  writable: true
+  scale: 1.0
+  offset: 0.0
+  swap_words: false
+  description: ''

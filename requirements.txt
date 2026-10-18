@@ -1,0 +1,5 @@
+PyQt6>=6.6
+pymcprotocol>=0.3.0
+PyMySQL>=1.1
+PyYAML>=6.0
+pyserial>=3.5
